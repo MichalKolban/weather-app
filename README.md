@@ -34,5 +34,5 @@ in progress...
 
 ## Tech Stack
 
-- React 18.2.0
-- Vite 5.0.8
+- React 18.2.0 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" width="17"/>
+- Vite 5.0.8 <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg" width="17"/>
