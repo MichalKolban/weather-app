@@ -1,5 +1,10 @@
 export const getData = () => {
-  const API_KEY = "";
+  // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
+  // REACT_APP_API_KEY=21f52349a19f5008a4063add5d04eaec
+
+  const API_KEY = import.meta.env.VITE_API_KEY;
+
   const URL = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${API_KEY}`;
 
   // valid link !

@@ -32,6 +32,10 @@ in progress...
 - OpenWeather API
 - Debounce
 
+## Todo
+
+- background color based on temperature level (low - cold - blue, dark blue / high - worm yellow, orange, red)
+
 ## Tech Stack
 
 - React 18.2.0 <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png" width="17"/>

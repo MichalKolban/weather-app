@@ -6,6 +6,10 @@ import { WeatherBox } from "./components/WeatherBox/WeatherBox";
 
 function App() {
   const [results, setResults] = useState([]);
+  const [city, setCity] = useState("");
+
+  console.log("City");
+  console.log(city);
 
   return (
     <>
@@ -13,7 +17,7 @@ function App() {
         <h1>Weather.me</h1>
         <div>
           <SearchBar setResults={setResults} />
-          <SearchResults results={results} />
+          <SearchResults results={results} onResultClick={(val) => setCity(val)} />
         </div>
         <WeatherBox />
       </Layout>

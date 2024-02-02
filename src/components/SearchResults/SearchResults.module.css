@@ -5,3 +5,8 @@
   width: 400px;
   background-color: salmon;
 }
+
+.searchResult {
+  border: 1px solid black;
+  cursor: pointer;
+}
