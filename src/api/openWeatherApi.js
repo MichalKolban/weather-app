@@ -1,11 +1,14 @@
-export const getData = () => {
+export const getWeatherDetails = (latitude, longitude) => {
   // const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
   // REACT_APP_API_KEY=21f52349a19f5008a4063add5d04eaec
 
-  const API_KEY = import.meta.env.VITE_API_KEY;
+  // const API_KEY = import.meta.env.VITE_API_KEY;
+const API_KEY = "21f52349a19f5008a4063add5d04eaec";
 
-  const URL = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=${API_KEY}`;
+  // const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&exclude={part}&appid=${API_KEY}`;
+
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat={${latitude}}&lon={${longitude}}&exclude={part}&appid=${API_KEY}`;
 
   // valid link !
   // https://api.openweathermap.org/data/2.5/weather?lat=53.43&lon=14.59&appid=
@@ -15,6 +18,16 @@ export const getData = () => {
 
   //valid link + polski + celsjusz
   // https://api.openweathermap.org/data/2.5/weather?lat=53.43&lon=14.59&lang=pl&units=metric&appid=
+
+  fetch(weatherURL).then(result => {
+    return result.json();
+  }).then((json) => {
+    console.log('json', json)
+    return json;
+  })
+
+
+
 };
 
 export const getCityCoordinates = (value) => {

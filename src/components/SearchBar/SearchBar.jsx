@@ -2,23 +2,13 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import styles from "./SearchBar.module.css";
 import { useDebounce } from "../../utils/debounce";
+import { getCityCoordinates } from "../../api/openWeatherApi";
 
-export const SearchBar = ({ setResults }) => {
+export const SearchBar = ({ setResults, onFindAnotherCity }) => {
   const [textInput, setTextInput] = useState("");
 
-  //   const fetchDeta = (val) => {
-  //     fetch("https://jsonplaceholder.typicode.com/users")
-  //       .then((res) => res.json())
-  //       .then((json) => {
-  //         const results = json.filter((user) => {
-  //           return val && user && user.name && user.name.toLowerCase().includes(val);
-  //         });
-  //         setResults(results);
-  //       });
-  //   };
-
   const fetchData = (val) => {
-    console.log("wywolanie");
+    console.log("wywolanie", val);
     const API_KEY = "21f52349a19f5008a4063add5d04eaec";
     const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${val}&limit=5&appid=${API_KEY}`;
     fetch(geoURL)
@@ -27,21 +17,23 @@ export const SearchBar = ({ setResults }) => {
         const results = json.filter((user) => {
           return val && user && user.name && user.name.toLowerCase().includes(val);
         });
+        console.log('result', results)
         setResults(results);
       });
   };
 
   useDebounce(
     () => {
-      fetchData(textInput);
+      fetchData(textInput.toLocaleLowerCase());
     },
     [textInput],
     800
   );
 
   const handleChange = (val) => {
+    console.log('wywolanie na input');
     setTextInput(val);
-    // fetchData(val);
+    onFindAnotherCity(true)
   };
 
   return (

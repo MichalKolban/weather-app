@@ -11,17 +11,19 @@ function App() {
   console.log("City");
   console.log(city);
 
+
+  const [showOptions, setShowOptions] = useState(false);
+
   return (
     <>
       <Layout>
         <h1>Weather.me</h1>
         <div>
-          <SearchBar setResults={setResults} />
-          <SearchResults results={results} onResultClick={(val) => setCity(val)} />
+          <SearchBar setResults={setResults} onFindAnotherCity={(val) => setShowOptions(val)} />
+          <SearchResults results={results} showOptions={showOptions} onShowOptions={(val) => setShowOptions(val)} onResultClick={(val) => setCity(val)} />
         </div>
-        <WeatherBox />
+        <WeatherBox cityObj={city} />
       </Layout>
-      <div>Remaning free api requests 1321 / 2000</div>
     </>
   );
 }

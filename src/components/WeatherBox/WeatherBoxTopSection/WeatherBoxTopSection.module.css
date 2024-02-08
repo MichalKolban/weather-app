@@ -1,0 +1,28 @@
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+  margin-top: 40px;
+
+  color: #fff;
+
+  img {
+    margin-right: 10px;
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    text-transform: capitalize;
+  }
+}
+
+.temperature {
+  font-size: 70px;
+}
