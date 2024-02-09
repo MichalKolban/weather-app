@@ -10,14 +10,14 @@ export const SearchBar = ({ setResults, onFindAnotherCity }) => {
   const fetchData = (val) => {
     console.log("wywolanie", val);
     const API_KEY = "21f52349a19f5008a4063add5d04eaec";
-    const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${val}&limit=5&appid=${API_KEY}`;
+    const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${val}&limit=5&appid=${API_KEY}`;
     fetch(geoURL)
       .then((res) => res.json())
       .then((json) => {
-        const results = json.filter((user) => {
-          return val && user && user.name && user.name.toLowerCase().includes(val);
+        const results = json.filter((data) => {
+          return val && data && data.name && data.name.toLowerCase().includes(val);
         });
-        console.log('result', results)
+        console.log("result", results);
         setResults(results);
       });
   };
@@ -31,9 +31,9 @@ export const SearchBar = ({ setResults, onFindAnotherCity }) => {
   );
 
   const handleChange = (val) => {
-    console.log('wywolanie na input');
+    console.log("wywolanie na input");
     setTextInput(val);
-    onFindAnotherCity(true)
+    onFindAnotherCity(true);
   };
 
   return (
