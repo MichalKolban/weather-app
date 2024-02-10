@@ -1,0 +1,11 @@
+.openSection {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 21px;
+  font-weight: 600;
+  color: #fff;
+}
