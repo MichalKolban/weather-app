@@ -25,7 +25,7 @@ Key features of the application:
 
 ## Status
 
-Live version : [Weather.me App](weather-me-app-react.netlify.app)
+Live version : <a href="https://weather-me-app-react.netlify.app/"  target="_blank">Weather.me App</a>
 
 ## Features
 
