@@ -23,7 +23,7 @@ const MONTHS = [
 ];
 
 const fillZeroGaps = (value) => {
-  return Number(value) < 9 ? "0" + value : value;
+  return Number(value) <= 9 ? "0" + value : value;
 };
 
 export const getCurrentDateAndTime = () => {

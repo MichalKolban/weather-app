@@ -10,7 +10,6 @@ export const SearchResults = ({
   const noMatchesFound = "no matches found...";
 
   const handleResultClick = (clickedBox) => {
-    console.log("Clicked result all", clickedBox);
     onShowOptions(false);
     onResultClick(clickedBox);
   };

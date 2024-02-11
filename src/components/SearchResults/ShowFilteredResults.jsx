@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import styles from "./ShowFilteredResults.module.css";
 
 export const ShowFilteredResults = ({
   results,
@@ -24,6 +25,7 @@ export const ShowFilteredResults = ({
     results.map((result, index) => (
       <button
         type="button"
+        className={styles.resultBtn}
         key={`${result.name}_${index}`}
         onClick={() => handleOnClick(result)}
       >
