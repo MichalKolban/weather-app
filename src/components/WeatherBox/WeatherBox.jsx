@@ -46,7 +46,9 @@ export const WeatherBox = ({ cityObj }) => {
   return (
     <div className={styles.weatherBox}>
       {!cityName ? (
-        <CurrentDateTime />
+        <div className={styles.weatherBoxStartSection}>
+          <CurrentDateTime />
+        </div>
       ) : (
         <>
           <WeatherBoxTopSection cityName={cityName} basicInfo={basicInfo} />

@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Layout>
-        <h1>Weather.me</h1>
+        <h2>Weather.me</h2>
         <div>
           <SearchBar
             setResults={setResults}

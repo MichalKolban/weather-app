@@ -24,7 +24,6 @@ export const SearchBar = ({ setResults, onFindAnotherCity }) => {
   );
 
   const handleChange = (val) => {
-    console.log("wywolanie na input");
     setTextInput(val);
     onFindAnotherCity(true);
   };
